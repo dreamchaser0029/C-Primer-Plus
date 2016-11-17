@@ -11,7 +11,7 @@
 #define PER3 0.25
 void print(void);
 float hours(void);
-void rate(int money);
+float rates(int money);
 
 void print(void)
 {
@@ -38,7 +38,7 @@ float hours(void)
 	return hours;
 }
 
-void rate(int money)
+float rates(int money)
 {
 	int rates;
 	if (money <= RATE1)
@@ -47,39 +47,41 @@ void rate(int money)
 		rates = RATE1 * PER1 + (money - RATE1) * PER2;
 	else
 		rates = RATE1 * PER1 + 150 * PER2 + (money - RATE2) * PER3;
-	printf("%f      %f       %f   ", money, rates, money - rates);
+	return rates;
 }
 
 int main(void)
 {
-	int n, moneys, hour;
+	int n, moneys;
+	float hour, rate;
 
 	print();
-	while ((n = getchar()) != 5)
+	while ((scanf("%d", &n)) == 1 && n != 5)
 	{
 		hour = hours();
 		switch (n)
 		{
-		case '1':
+		case 1 :
 			moneys = hour * BASE1;
 			break;
-		case '2':
+		case 2 :
 			moneys = hour * BASE2;
 			break;
-		case '3':
+		case 3 :
 			moneys = hour * BASE3;
 			break;
-		case '4':
+		case 4 :
 			moneys = hour * BASE4;
 			break;
-		case '\n':
+		case '\n' :
 			continue;
 		default:
-			printf("Enter 1~5");
+			printf("Enter 1~5£º");
 			continue;
 		}
 
-		void rate(moneys);
+		rate = rates(moneys);
+		printf(" %d    %f     %f\n", moneys, rate, moneys - rate);
 		print();
 	}
 

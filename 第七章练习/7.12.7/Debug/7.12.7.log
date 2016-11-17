@@ -1,0 +1,10 @@
+﻿  7.12.7.c
+f:\source\repos\c-primer-plus\第七章练习\7.12.7\7.12.7.c(16): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: 参见“scanf”的声明
+f:\source\repos\c-primer-plus\第七章练习\7.12.7\7.12.7.c(26): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+f:\source\repos\c-primer-plus\第七章练习\7.12.7\7.12.7.c(28): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+f:\source\repos\c-primer-plus\第七章练习\7.12.7\7.12.7.c(30): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+f:\source\repos\c-primer-plus\第七章练习\7.12.7\7.12.7.c(31): warning C4244: “return”: 从“int”转换到“float”，可能丢失数据
+f:\source\repos\c-primer-plus\第七章练习\7.12.7\7.12.7.c(40): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
+  7.12.7.vcxproj -> F:\Source\Repos\C-Primer-Plus\第七章练习\Debug\7.12.7.exe
+  7.12.7.vcxproj -> F:\Source\Repos\C-Primer-Plus\第七章练习\Debug\7.12.7.pdb (Full PDB)
