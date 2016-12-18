@@ -1,0 +1,5 @@
+﻿  showchar2.c
+f:\vs2015\source\repos\第八章代码\8.6 showchar2.c\showchar2.c(10): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: 参见“scanf”的声明
+  8.6 showchar2.c.vcxproj -> F:\VS2015\Source\Repos\第八章代码\Debug\8.6 showchar2.c.exe
+  8.6 showchar2.c.vcxproj -> F:\VS2015\Source\Repos\第八章代码\Debug\8.6 showchar2.c.pdb (Full PDB)
