@@ -31,7 +31,7 @@ int main(void)
 				break;
 			case '4':
 					moneys = money();
-					rates(moneys, BASE3);
+					rates(moneys, BASE4);
 					break;
 			case '\n':
 				continue;
@@ -48,6 +48,7 @@ void display(void)
 {
 	printf("(1)17850         (2)23900\n");
 	printf("(3)29750         (4)14875\n");
+	printf("(5)quit\n");
 }
 
 float money(void)
@@ -60,10 +61,10 @@ float money(void)
 void rates(float money, int base)
 {
 	float rate;
-	if (money < base)
+	if (money <= base)
 		rate = money * BASIC1;
 	else
 		rate = (money - base) * BASIC2 + base * BASIC1;
-	printf("%f", rate);
+	printf("%f\n", rate);
 }
 
