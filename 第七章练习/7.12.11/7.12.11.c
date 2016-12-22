@@ -28,15 +28,15 @@ int main(void)
 		{
 		case 'a':
 			n = kilograms();
-			a_kilos += 0;
+			a_kilos += n;
 			break;
 		case 'b':
 			n = kilograms();
-			b_kilos += 0;
+			b_kilos += n;
 			break;
 		case 'c':
 			n = kilograms();
-			c_kilos += 0;
+			c_kilos += n;
 			break;
 		case '\n':
 			continue;
@@ -85,7 +85,7 @@ void total_cost(float ar, float be, float ca, float a_kil, float b_kil, float c_
 	else if (BASE1 < all_kilograms && all_kilograms < BASE2)
 		package = BASIC2;
 	else
-		package = BASIC2 + (all_kilograms - BASE1) * BASE3;
+		package = BASIC2 + (all_kilograms - BASE2) * BASIC3;
 	cost = all_cost - discount + package;
 	display();
 	printf("articokes %f   %f\n", a_kil, ar);
