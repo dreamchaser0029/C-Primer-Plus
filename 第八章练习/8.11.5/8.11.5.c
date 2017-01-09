@@ -11,23 +11,29 @@ int main(void)
 	{
 		while (ch == '\n')
 			continue;
-		if (ch == '\n')
+		if (ch == 'n')
 		{
 			printf("Is it bigger or litter(b/l)?");
-			if ((response = getchar()) == 'b')
+			scanf("%c", &response) == 1;
+			if (response == 'b')
 			{
 				max = n;
 				n = (max + min) / 2;
 				continue;
 			}
-			if ((response = getchar()) == 'l')
+			else if ((response = getchar()) == 'l')
 			{
 				min = n;
 				n = (max + min) / 2;
 				continue;
 			}
+			else if (response == '\n')
+				continue;
 			else
-				printf("")
+			{
+				printf("Enter b\l");
+				
+			}
 		}
 	}
 }
