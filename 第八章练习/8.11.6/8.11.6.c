@@ -8,9 +8,6 @@ int main(void)
 	n = get_first();
 	printf("%c", n);
 
-	getchar();
-	getchar();
-	getchar();
 	return 0;
 }
 

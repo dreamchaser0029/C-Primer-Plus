@@ -57,19 +57,22 @@ int main(void)
 	print();
 	while ((n = getchar()) != 5)
 	{
-		hour = hours();
 		switch (n)
 		{
 		case '1':
+			hour = hours();
 			moneys = hour * BASE1;
 			break;
 		case '2':
+			hour = hours();
 			moneys = hour * BASE2;
 			break;
 		case '3':
+			hour = hours();
 			moneys = hour * BASE3;
 			break;
 		case '4':
+			hour = hours();
 			moneys = hour * BASE4;
 			break;
 		case '\n':
