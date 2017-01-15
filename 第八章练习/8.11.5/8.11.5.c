@@ -3,37 +3,43 @@ int main(void)
 {
 	float max = 100, min = 0;
 	float n = 50;
-	char ch, response;
+	char ch;
 	printf("Please a number from 0 to 100.");
-	printf("Is it %d?", n);
+	printf("Is it %f?\n", n);
+	printf("Enter yes(y)/high(h)/low(l)\n");
 
 	while ((ch = getchar()) != 'y')
 	{
 		while (ch == '\n')
-			continue;
-		if (ch == 'n')
-		{
-			printf("Is it bigger or litter(b/l)?");
-			scanf("%c", &response) == 1;
-			if (response == 'b')
+			break;
+		if (ch == 'h')
 			{
 				max = n;
 				n = (max + min) / 2;
+				printf("Is it %f?\n", n);
+				printf("Enter yes(y)/high(h)/low(l)\n");
 				continue;
 			}
-			else if ((response = getchar()) == 'l')
+		else if (ch == 'l')
 			{
 				min = n;
 				n = (max + min) / 2;
+				printf("Is it %f?\n", n);
+				printf("Enter yes(y)/high(h)/low(l)\n");
 				continue;
 			}
-			else if (response == '\n')
+		else if (ch == '\n')
 				continue;
-			else
+		else
 			{
-				printf("Enter b\l");
-				
+				printf("Enter h or l\n");
+				while ((ch =getchar()) != '\n')	
+					continue;
 			}
-		}
 	}
+	printf("I know i can do\n");
+
+	getchar();
+	getchar();
+	return 0;
 }
