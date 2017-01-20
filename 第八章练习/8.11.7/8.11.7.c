@@ -1,19 +1,102 @@
 #include<stdio.h>
-#define RATE1 300
-#define RATE2 RATE1 + 150
-#define BASE1 8.75
-#define BASE2 9.33
-#define BASE3 10.00
-#define BASE4 11.20
-#define OVER 1.5
-#define PER1 0.15
-#define PER2 0.2
-#define PER3 0.25
-void print(void);
-float hours(void);
-void rate(int money);
+#include<ctype.h>
+#define WAGE1 8.75
+#define WAGE2 9.33
+#define WAGE3 10.00
+#define WAGE4 11.20 
+#define BASE_RATE1 300
+#define BASE_RATE2 450
+#define BASIC_PER1 0.15
+#define BASIC_PER2 0.20
+#define BASIC_PER3 0.25
+#define BASIC_HOURS 40
+#define MULTIPLE 1.5
+float hour(void);
+float wage(float hour, int level);
+float levy(float pay);
+void income(float wages, float levys);
+void displays(void);
 
-void print(void)
+int main(void)
+{
+	float hours, salary, tax;
+	int n;
+
+	displays();
+	while ((n = getchar()) != 'q')
+	{
+		if (isalpha(n))
+		{
+			while (getchar() != '\n')
+				continue;
+			switch (n)
+			{
+			case 'a':
+				hours = hour();
+				salary = wage(hours, WAGE1);
+				break;
+			case 'b':
+				hours = hour();
+				salary = wage(hours, WAGE2);
+				break;
+			case 'c':
+				hours = hour();
+				salary = wage(hours, WAGE3);
+				break;
+			case 'd':
+				hours = hour();
+				salary = wage(hours, WAGE4);
+				break;
+			case '\n':
+				continue;
+			default:
+				printf("Enter a~d or q:");
+				break;
+			}
+		}
+		tax = levy(salary);
+		income(salary, tax);
+		displays();
+	}
+
+	printf("Done!\n");
+	return 0;
+}
+
+float hour(void)
+{
+
+	float hours;
+	printf("Enter your working time:");
+	scanf("%f", &hours);
+	if (hours > BASIC_HOURS)
+		return MULTIPLE * hours;
+	return hours;
+}
+
+float wage(float hour, int level)
+{
+	return hour * level;
+}
+
+float levy(float pay)
+{
+	if (pay <= BASE_RATE1)
+		return pay * BASIC_PER1;
+	else if (pay <= BASE_RATE2 && pay >= BASE_RATE1)
+		return BASE_RATE1 * BASIC_PER1 + (pay - BASE_RATE1) * BASIC_PER2;
+	else
+		return BASE_RATE1 * BASIC_PER1 + (BASE_RATE2 - BASE_RATE1) * BASIC_PER2 + (pay - BASE_RATE2) * BASIC_PER3;
+}
+
+void income(float wages, float levys)
+{
+	float earning;
+	earning = wages - levys;
+	printf("The income is %.2f, the tax is %.2f, the net income is %.2f\n", wages, levys, earning);
+}
+
+void displays(void)
 {
 	int n;
 	for (n = 80; n > 0; n--)
@@ -26,66 +109,4 @@ void print(void)
 	for (n = 80; n > 0; n--)
 		printf("*");
 	printf("\n");
-}
-
-float hours(void)
-{
-	float hours;
-	printf("Enter your work hours:");
-	scanf("%f", &hours);
-	if (hours > 40)
-		hours *= 1.5;
-	return hours;
-}
-
-void rate(int money)
-{
-	float rates;
-	if (money <= RATE1)
-		rates = money * PER1;
-	else if (money >= RATE1 && money <= RATE2)
-		rates = RATE1 * PER1 + (money - RATE1) * PER2;
-	else
-		rates = RATE1 * PER1 + 150 * PER2 + (money - RATE2) * PER3;
-	printf("%f      %f       %f   ", money, rates, money - rates);
-}
-
-int main(void)
-{
-	double moneys, hour;
-	char n;
-
-	print();
-	while ((n = getchar()) != 'q')
-	{
-		hour = hours();
-		switch (n)
-		{
-		case 'a':
-			moneys = hour * BASE1;
-			break;
-		case 'b':
-			moneys = hour * BASE2;
-			break;
-		case 'c':
-			moneys = hour * BASE3;
-			break;
-		case 'd4':
-			moneys = hour * BASE4;
-			break;
-		case '\n':
-			continue;
-		default:
-			printf("Enter a,b,c,d or q");
-			while (getchar() != '\n')
-				continue;
-			continue;
-		}
-
-		void rate(moneys);
-		print();
-	}
-
-	printf("Bye!");
-	return 0;
 }

@@ -1,0 +1,18 @@
+﻿  8.11.8.c
+f:\source\repos\c-primer-plus\第八章练习\8.11.8\8.11.8.c(61): warning C4013: “get”未定义；假设外部返回 int
+f:\source\repos\c-primer-plus\第八章练习\8.11.8\8.11.8.c(61): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+f:\source\repos\c-primer-plus\第八章练习\8.11.8\8.11.8.c(63): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+f:\source\repos\c-primer-plus\第八章练习\8.11.8\8.11.8.c(71): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+f:\source\repos\c-primer-plus\第八章练习\8.11.8\8.11.8.c(73): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+f:\source\repos\c-primer-plus\第八章练习\8.11.8\8.11.8.c(81): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+f:\source\repos\c-primer-plus\第八章练习\8.11.8\8.11.8.c(83): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+f:\source\repos\c-primer-plus\第八章练习\8.11.8\8.11.8.c(91): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+f:\source\repos\c-primer-plus\第八章练习\8.11.8\8.11.8.c(93): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+f:\source\repos\c-primer-plus\第八章练习\8.11.8\8.11.8.c(97): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+f:\source\repos\c-primer-plus\第八章练习\8.11.8\8.11.8.c(103): warning C4142: "get": 类型的良性重定义
+f:\source\repos\c-primer-plus\第八章练习\8.11.8\8.11.8.c(106): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+f:\source\repos\c-primer-plus\第八章练习\8.11.8\8.11.8.c(107): warning C4244: “函数”: 从“float”转换到“int”，可能丢失数据
+f:\source\repos\c-primer-plus\第八章练习\8.11.8\8.11.8.c(117): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+f:\source\repos\c-primer-plus\第八章练习\8.11.8\8.11.8.c(99): warning C4700: 使用了未初始化的局部变量“f_number”
+  8.11.8.vcxproj -> F:\Source\Repos\C-Primer-Plus\第八章练习\Debug\8.11.8.exe
+  8.11.8.vcxproj -> F:\Source\Repos\C-Primer-Plus\第八章练习\Debug\8.11.8.pdb (Full PDB)
