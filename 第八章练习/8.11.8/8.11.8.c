@@ -14,10 +14,10 @@ int main(void)
 	display();
 	while ((ch = getchar()) != 'q')
 	{
+		while (ch == '\n')
+			ch = getchar();
 		if (isalpha(ch))
 		{
-			while (getchar() != '\n')
-				continue;
 			switch (ch)
 			{
 			case 'a':
@@ -32,8 +32,8 @@ int main(void)
 			case 'd':
 				divide();
 				break;
-			case '\n':
-				continue;
+			case 'q':
+				goto part;
 			default:
 				printf("Enter a , s, m, q or q\n");
 				break;
@@ -42,7 +42,7 @@ int main(void)
 		display();
 	}
 
-	printf("Bye!\n");
+	part:printf("Bye!\n");
 
 	return 0;
 }
@@ -59,69 +59,71 @@ void add(void)
 {
 	float f_number, l_number;
 	printf("Enter the first number:");
-	f_number = get();
+	f_number = first();
 	printf("Enter second number:");
-	l_number = get();
-	printf("%.2f + %.2f = %.2f", f_number, l_number, f_number + l_number);
+	l_number = second();
+	printf("%.2f + %.2f = %.2f\n", f_number, l_number, f_number + l_number);
 }
 
 void multiply(void)
 {
 	float f_number, l_number;
 	printf("Enter the first number:");
-	f_number = get();
+	f_number = first();
 	printf("Enter second number:");
-	l_number = get();
-	printf("%f * %f = %f", f_number, l_number, f_number * l_number);
+	l_number = second();
+	printf("%f * %f = %f\n", f_number, l_number, f_number * l_number);
 }
 
 void subtract(void)
 {
 	float f_number, l_number;
 	printf("Enter the first number:");
-	f_number = get();
+	f_number = first();
 	printf("Enter second number:");
-	l_number = get();
-	printf("%.2f - %.2f = %.2f", f_number, l_number, f_number - l_number);
+	l_number = second();
+	printf("%.2f - %.2f = %.2f\n", f_number, l_number, f_number - l_number);
 }
 
 void divide(void)
 {
 	float f_number, l_number;
 	printf("Enter the first number:");
-	l_number = get();
+	f_number = first();
 	printf("Enter second number:");
-	l_number = get();
+	l_number = second();
 	while (l_number == 0)
 	{
 		printf("Enter a number other than 0: ");
-		l_number = get();
+		l_number = second();
 	}
-		printf("%.2f / %.2f = %.2f", f_number, l_number, f_number / l_number);
+		printf("%.2f / %.2f = %.2f\n", f_number, l_number, f_number / l_number);
 }
 
 float first(void)
 {
-
-	return 0.0f;
+	float n;
+	char m;
+	while ((scanf("%f", &n)) != 1)
+	{
+		while ((m = getchar()) != '\n')
+			putchar(m);
+		printf(" is not an number.\n");
+		printf("Please enter a number, such as 2.5, -1.78E8, or 3£º");
+	}
+	return n;
 }
 
-float get(void)
+float second(void)
 {
-	char response;
 	float n;
-	n = getchar();
-	while (isdigit(n) == 0)
+	char m;
+	while ((scanf("%f", &n)) != 1)
 	{
-		while ((response = getchar()) != '\n')
-		{
-			putchar(response);
-			continue;
-			if (response == '\n')
-				break;
-		}
-		printf(" is not a number.");
-		n = getchar();
+		while ((m = getchar()) != '\n')
+			putchar(m);
+		printf(" is not an number.\n");
+		printf("Please enter a number, such as 2.5, -1.78E8, or 3£º");
 	}
 	return n;
 }
